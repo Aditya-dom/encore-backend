@@ -1,0 +1,79 @@
+{% extends 'base.html'%}
+{%block title%} CA Portal {%endblock title%}
+{% block body %}{% endblock body %}
+
+
+
+<!-- FILEPATH: /Users/arawn/Desktop/backend/template/ca.html -->
+<!-- FILEPATH: /Users/arawn/backend/templates/ca.html -->
+<!-- BEGIN: ed8c6549bwf9 -->
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campus Ambassador Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Campus Ambassador Login</h1>
+        
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+-->
+<!-- END: ed8c6549bwf9 -->
+<!--    <script>
+     
+        const referralInput = document.getElementById('referral');
+        const referralForm = document.querySelector('form');
+        
+        referralForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            
+            const referralCode = referralInput.value;
+            
+            // Make an API call to check if the referral code exists in the database
+            fetch('/checkReferralCode', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ referralCode })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.exists) {
+                    // Referral code exists, proceed with login
+                    referralForm.submit();
+                } else {
+                    // Referral code does not exist, show an error message
+                    const errorElement = document.createElement('p');
+                    errorElement.textContent = 'Invalid referral code';
+                    referralForm.appendChild(errorElement);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+
+-->

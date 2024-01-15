@@ -1,0 +1,19 @@
+import tensorflow as tf
+
+
+model = tf.keras.models.load_model('llm_model.h5')
+
+
+data = load_data('brain_tumor_data.csv')
+
+
+preprocessed_data = preprocess_data(data)
+
+
+predictions = model.predict(preprocessed_data)
+
+
+postprocessed_predictions = postprocess_predictions(predictions)
+
+
+save_predictions(postprocessed_predictions, 'predictions.txt')

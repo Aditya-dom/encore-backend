@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Portal</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registration</h1>
+        <form action="/register" method="POST">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="college">College Name:</label>
+                <input type="text" class="form-control" id="college" name="college" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="year">Year:</label>
+                <input type="text" class="form-control" id="year" name="year" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" class="form-control" id="dob" name="dob" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="referral">Referral Code:</label>
+                <input type="text" class="form-control" id="referral" name="referral">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+     
+        const referralInput = document.getElementById('referral');
+        const referralForm = document.querySelector('form');
+        
+        referralForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            
+            const referralCode = referralInput.value;
+            
+            // Make an API call to check if the referral code exists in the database
+            fetch('/checkReferralCode', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ referralCode })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.exists) {
+                    // Referral code exists, proceed with login
+                    referralForm.submit();
+                } else {
+                    // Referral code does not exist, show an error message
+                    const errorElement = document.createElement('p');
+                    errorElement.textContent = 'Invalid referral code';
+                    referralForm.appendChild(errorElement);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
