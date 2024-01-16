@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> {% block title %}{% endblock title %} | Campus Ambassador Login</title>
+    <title>{% block title %}{% endblock title %} | Campus Ambassador Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-{% block body %}{% endblock body %}
+    {% block body %}{% endblock body %}
 
     <div class="container">
         <h1 class="text-center">Campus Ambassador Login</h1>
         
         <form action="/login" method="POST">
-        {% csrf_token %}
+            {% csrf_token %}
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" class="form-control" id="email" name="email" required>
