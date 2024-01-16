@@ -3,5 +3,5 @@
 * Login portal
 * Campus ambassador portal
 * Admin portal to manage data
-#### feel free to Clone it and customize with your templates and codes.
+#### feel free to Clone it and customize it with your templates and codes.
 ~~thank you!!~~
