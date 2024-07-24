@@ -1,4 +1,6 @@
-# Full fledged college fest website backend on django framework.
+# Click Here to see [Encore](https://itsvineetkr.github.io/Encore/)
+> __Embark on a legacy as the Institute of Engineering and Technology, Lucknow, proudly unfolds the annual saga of "Encore." With a storied history spanning many years, this iconic event has evolved into a beacon of excellence and innovation. Encore has had the honor of hosting renowned personalities, including the melodious Jubin Nautiyal and the vivacious Neha Kakkar, whose captivating performances added an unforgettable dimension to the event's narrative.__
+## Full fledged college fest website backend on django framework.
 * Registration portal
 * Login portal
 * Campus ambassador portal
